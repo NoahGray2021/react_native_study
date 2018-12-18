@@ -1,6 +1,12 @@
 import React from 'react';
 import { View, Text, Button, Image } from 'react-native';
-import { createAppContainer, createStackNavigator, StackActions, NavigationActions } from 'react-navigation'; // Version can be specified in package.json
+import { 
+  createAppContainer, 
+  createStackNavigator, 
+  StackActions, 
+  NavigationActions, 
+  createBottomTabNavigator,
+} from 'react-navigation'; // Version can be specified in package.json
 
 class LogoTitle extends React.Component {
   render() {
@@ -131,9 +137,23 @@ class DetailsScreen extends React.Component {
           title="Modal"
           color="orange"
         />
+        <Button 
+          onPress={() => navigation.navigate('SettingsScreen')}
+          title="setting screen"
+        />
       </View>
     );
   }  
+}
+
+class SettingsScreen extends React.Component {
+  render() {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text>Settings</Text>
+      </View>
+    )
+  }
 }
 
 class ModalScreen extends React.Component {
@@ -172,6 +192,12 @@ const AppNavigator = createStackNavigator({
     }
 });
 
+const SecondNavigator = createStackNavigator({
+  SettingsScreen: {
+    screen: SettingsScreen,
+  },
+})
+
 const RootStack = createStackNavigator(
   {
     Main: {
@@ -187,4 +213,25 @@ const RootStack = createStackNavigator(
   }
 )
 
-export default createAppContainer(RootStack);
+// const TabNavigator = createBottomTabNavigator(
+//   {
+//     Home: HomeScreen,
+//     Settings: SettingsScreen,
+//   },
+//   {
+//     defaultNavigationOptions: ({ navigation }) => ({
+//       tabBarIcon: ({ focused, horizontal, tintColor }) => {
+//         const { Home } = navigation.state;
+//         let ... refer to the tutorial
+//       })
+//     tabBarOptions: {
+//       activeTintColor: 'tomato',
+//       inactiveTintColor: 'gray',
+//     },
+//   }
+// );
+
+export default createAppContainer(createBottomTabNavigator({
+  RootStack,
+  SecondNavigator,
+}));

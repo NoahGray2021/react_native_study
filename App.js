@@ -8,6 +8,9 @@ import {
   createBottomTabNavigator,
 } from 'react-navigation'; // Version can be specified in package.json
 
+import SignUp from './src/pages/SignIn/SignUp';
+import SignIn from './src/pages/SignIn/SignIn';
+
 import PlatformIndex from './src/pages/Platform/PlatformIndex';
 import PlatformSecondPage from './src/pages/Platform/PlatformSecondPage';
 
@@ -16,78 +19,43 @@ import CurationIndex from './src/pages/Curation/CurationIndex';
 import GuideSecondPage from './src/pages/Guide/GuideSecondPage';
 import CurationSecondPage from './src/pages/Curation/CurationSecondPage';
 
-// class LogoTitle extends React.Component {
-//   render() {
-//     return (
-//       <Image
-//         source={require('./resources/home-icon.png')}
-//         style={{ width: 30, height: 30 }}
-//       />
-//     );
-//   }
-// }
-
 class HomeScreen extends React.Component {
   static navigationOptions = ({ navigation }) => {
     return {
-      // headerTitle: <LogoTitle />,
       headerTitle: 'MyD',
       headerRight: (
         <Button 
           onPress={() => alert('This is a menu list')}
-          title="Menu"
+          title="?"
           color="black"
-        />
-      ),
-      headerLeft: (
-        <Button 
-          onPress={navigation.getParam('increaseCount')}
-          title="+1"
-          color="#fff"
         />
       ),
     }
   };
 
-  componentDidMount() {
-    this.props.navigation.setParams({ increaseCount: this._increaseCount });
-  }
-
-  state = {
-    count: 0,
-  };
-
-  _increaseCount = () => {
-    this.setState({ count: this.state.count + 1 });
-  }
-
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Home Screen</Text>
-        <Text>HeaderLeft Count: {this.state.count}</Text>
-        <Button
-          title="Go to Details 1 - This cannot get params and back"
-          onPress={() => {
-            this.props.navigation.dispatch(StackActions.reset({
-              index: 0,
-              actions: [
-                NavigationActions.navigate({ 
-                  routeName: 'Details',
-                  itemId: 86,
-                  otherParam: 'Parameter for Detail Screen',
-                })
-              ],
-            }))
-          }}
-        />
+        <Text>MyD</Text>
         <Button 
-          title="Go to Details 2 - This working programmatically"
+          title="Detail Page"
           onPress={() => {
             this.props.navigation.navigate('Details', {
               itemId: 77,
               otherParam: 'Parameter 2',
             })
+          }}
+        />
+        <Button 
+          title="로그인"
+          onPress={() => {
+            this.props.navigation.navigate('SignIn');
+          }}
+        />
+        <Button 
+          title="가입하기"
+          onPress={() => {
+            this.props.navigation.navigate('SignUp');
           }}
         />
       </View>
@@ -168,12 +136,8 @@ class ModalScreen extends React.Component {
 }
 
 const AppNavigator = createStackNavigator({
-  Home: {
-    screen: HomeScreen,
-  },
-  Details: {
-    screen: DetailsScreen,
-  },
+  Home: HomeScreen,
+  Details: DetailsScreen,
 }, {
     initialRouteName: 'Home',
     defaultNavigationOptions: {
@@ -185,6 +149,9 @@ const AppNavigator = createStackNavigator({
         fontWeight: '100'
       }
     }
+}, {
+  mode: 'modal',
+  headerMode: 'none'
 });
 
 const Guide = createStackNavigator({
@@ -215,7 +182,7 @@ const Curation = createStackNavigator({
   CurationIndex: CurationIndex,
   CurationSecond: CurationSecondPage,
 }, {
-  initialRouteName: "CurationIndex",
+  initialRouteName: 'CurationIndex',
   defaultNavigationOptions: {
     headerStyle: {
       backgroundColor: 'purple'
@@ -223,19 +190,20 @@ const Curation = createStackNavigator({
   }
 });
 
-const MyData = createStackNavigator(
-  {
-    Main: {
-      screen: AppNavigator,
-    },
-    MyModal: {
-      screen: ModalScreen,
-    },
-  },
-  {
-    mode: 'modal',
-    headerMode: 'none',
+const MyData = createStackNavigator({
+  Main: AppNavigator,
+  MyModal: ModalScreen,
+  SignIn: SignIn,
+  SignUp: SignUp,
+}, {
+  initialRouteName: 'Main',
+  defaultNavigationOptions: {
+    headerStyle: {
+      backgroundColor: 'red'
+    }
   }
+}
+
 );
 
 const TabNavigator = createBottomTabNavigator(

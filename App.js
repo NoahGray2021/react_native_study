@@ -8,21 +8,30 @@ import {
   createBottomTabNavigator,
 } from 'react-navigation'; // Version can be specified in package.json
 
-class LogoTitle extends React.Component {
-  render() {
-    return (
-      <Image
-        source={require('./resources/home-icon.png')}
-        style={{ width: 30, height: 30 }}
-      />
-    );
-  }
-}
+import PlatformIndex from './src/pages/Platform/PlatformIndex';
+import PlatformSecondPage from './src/pages/Platform/PlatformSecondPage';
+
+import GuideIndex from './src/pages/Guide/GuideIndex';
+import CurationIndex from './src/pages/Curation/CurationIndex';
+import GuideSecondPage from './src/pages/Guide/GuideSecondPage';
+import CurationSecondPage from './src/pages/Curation/CurationSecondPage';
+
+// class LogoTitle extends React.Component {
+//   render() {
+//     return (
+//       <Image
+//         source={require('./resources/home-icon.png')}
+//         style={{ width: 30, height: 30 }}
+//       />
+//     );
+//   }
+// }
 
 class HomeScreen extends React.Component {
   static navigationOptions = ({ navigation }) => {
     return {
-      headerTitle: <LogoTitle />,
+      // headerTitle: <LogoTitle />,
+      headerTitle: 'MyD',
       headerRight: (
         <Button 
           onPress={() => alert('This is a menu list')}
@@ -137,23 +146,9 @@ class DetailsScreen extends React.Component {
           title="Modal"
           color="orange"
         />
-        <Button 
-          onPress={() => navigation.navigate('SettingsScreen')}
-          title="setting screen"
-        />
       </View>
     );
   }  
-}
-
-class SettingsScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Settings</Text>
-      </View>
-    )
-  }
 }
 
 class ModalScreen extends React.Component {
@@ -161,7 +156,7 @@ class ModalScreen extends React.Component {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text style={{ fontSize: 30 }}>
-          This is a modal
+          This is a modal in MyData Page
         </Text>
         <Button 
           onPress={() => this.props.navigation.goBack()}
@@ -192,13 +187,43 @@ const AppNavigator = createStackNavigator({
     }
 });
 
-const SecondNavigator = createStackNavigator({
-  SettingsScreen: {
-    screen: SettingsScreen,
-  },
-})
+const Guide = createStackNavigator({
+  GuideIndex:  GuideIndex,
+  GuideSecond: GuideSecondPage,
+}, {
+  initialRouteName: "GuideIndex",
+  defaultNavigationOptions: {
+    headerStyle: {
+      backgroundColor: 'skyblue'
+    }
+  }
+});
 
-const RootStack = createStackNavigator(
+const Platform = createStackNavigator({
+  PlatformIndex: PlatformIndex,
+  PlatformSecond: PlatformSecondPage,
+}, {
+  initialRouteName: "PlatformIndex",
+  defaultNavigationOptions: {
+    headerStyle: {
+      backgroundColor: 'pink'
+    }
+  }
+});
+
+const Curation = createStackNavigator({
+  CurationIndex: CurationIndex,
+  CurationSecond: CurationSecondPage,
+}, {
+  initialRouteName: "CurationIndex",
+  defaultNavigationOptions: {
+    headerStyle: {
+      backgroundColor: 'purple'
+    }
+  }
+});
+
+const MyData = createStackNavigator(
   {
     Main: {
       screen: AppNavigator,
@@ -211,27 +236,21 @@ const RootStack = createStackNavigator(
     mode: 'modal',
     headerMode: 'none',
   }
-)
+);
 
-// const TabNavigator = createBottomTabNavigator(
-//   {
-//     Home: HomeScreen,
-//     Settings: SettingsScreen,
-//   },
-//   {
-//     defaultNavigationOptions: ({ navigation }) => ({
-//       tabBarIcon: ({ focused, horizontal, tintColor }) => {
-//         const { Home } = navigation.state;
-//         let ... refer to the tutorial
-//       })
-//     tabBarOptions: {
-//       activeTintColor: 'tomato',
-//       inactiveTintColor: 'gray',
-//     },
-//   }
-// );
+const TabNavigator = createBottomTabNavigator(
+  {
+    MyData,
+    Guide,
+    Platform,
+    Curation,
+  },
+  {
+    tabBarOptions: {
+      activeTintColor: 'tomato',
+      inactiveTintColor: 'gray',
+    },
+  }
+);
 
-export default createAppContainer(createBottomTabNavigator({
-  RootStack,
-  SecondNavigator,
-}));
+export default createAppContainer(TabNavigator);

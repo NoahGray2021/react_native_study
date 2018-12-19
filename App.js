@@ -1,15 +1,15 @@
 import React from 'react';
-import { View, Text, Button, Image } from 'react-native';
+import { View, Text, Button, StyleSheet, TextInput } from 'react-native';
 import { 
   createAppContainer, 
   createStackNavigator, 
-  StackActions, 
-  NavigationActions, 
   createBottomTabNavigator,
 } from 'react-navigation'; // Version can be specified in package.json
 
 import SignUp from './src/pages/SignIn/SignUp';
 import SignIn from './src/pages/SignIn/SignIn';
+
+import MyDataIndex from './src/pages/MyData/MyDataIndex';
 
 import PlatformIndex from './src/pages/Platform/PlatformIndex';
 import PlatformSecondPage from './src/pages/Platform/PlatformSecondPage';
@@ -19,7 +19,7 @@ import CurationIndex from './src/pages/Curation/CurationIndex';
 import GuideSecondPage from './src/pages/Guide/GuideSecondPage';
 import CurationSecondPage from './src/pages/Curation/CurationSecondPage';
 
-class HomeScreen extends React.Component {
+class InitialScreen extends React.Component {
   static navigationOptions = ({ navigation }) => {
     return {
       headerTitle: 'MyD',
@@ -36,122 +36,65 @@ class HomeScreen extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>MyD</Text>
-        <Button 
-          title="Detail Page"
-          onPress={() => {
-            this.props.navigation.navigate('Details', {
-              itemId: 77,
-              otherParam: 'Parameter 2',
-            })
-          }}
+        <View>
+          <Text style={styles.title}>MyD</Text>
+        </View>
+        <TextInput 
+          style={styles.inputStyle}
+          placeholder='ID'
         />
+        <TextInput 
+          style={styles.inputStyle}
+          placeholder='Password'
+        />        
         <Button 
           title="로그인"
-          onPress={() => {
-            this.props.navigation.navigate('SignIn');
-          }}
+          onPress={() => this.props.navigation.navigate('MyDataIndex')}
         />
         <Button 
           title="가입하기"
-          onPress={() => {
-            this.props.navigation.navigate('SignUp');
-          }}
+          onPress={() => this.props.navigation.navigate('SignUp')}
+        />
+        <Button
+          title="비회원으로 이용하기"
+          onPress={() => this.props.navigation.navigate('MyDataIndex')}
         />
       </View>
     );
   }  
 }
 
-class DetailsScreen extends React.Component {
-  static navigationOptions = ({ navigation }) => {
-    return {
-      title: navigation.getParam('otherParam', 'A Nested Details Screen')
-    };
-  };
-
-  render() {
-    const { navigation } = this.props;
-    const itemId = navigation.getParam('itemId', 'NO-ID');
-    const itemId2 = this.props.itemId;
-    const otherParam2 = this.props.otherParam;
-    const otherParam = navigation.getParam('otherParam', 'some default value');
-
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Details Screen</Text>
-        <Text>item Id: {JSON.stringify(itemId)} {itemId2}</Text>
-        <Text>other Param: {JSON.stringify(otherParam)} {otherParam2}</Text>
-
-        <Button 
-          title="Go back to the Home"
-          onPress={() => {
-            this.props.navigation.dispatch(StackActions.reset({
-              index: 0,
-              actions: [
-                NavigationActions.navigate({ 
-                  routeName: 'Home', 
-                  itemId: Math.floor(Math.random() * 100),
-                })
-              ],
-            }))
-          }}
-        />
-        <Button 
-          title="Go back by programmatically"
-          onPress={() => this.props.navigation.goBack()}
-        />
-        <Button 
-          title="Go to the First Screen"
-          onPress={() => this.props.navigation.popToTop()}
-        />
-        <Button 
-          title="Update the title"
-          onPress={() => this.props.navigation.setParams({ otherParam: 'Updated'})}
-        />
-        <Button 
-          onPress={() => navigation.navigate('MyModal')}
-          title="Modal"
-          color="orange"
-        />
-      </View>
-    );
-  }  
-}
-
-class ModalScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text style={{ fontSize: 30 }}>
-          This is a modal in MyData Page
-        </Text>
-        <Button 
-          onPress={() => this.props.navigation.goBack()}
-          title="Dismiss"
-        />
-      </View>
-    );
+const styles = StyleSheet.create({
+  title: {
+    fontWeight: 'bold',
+    fontSize: 40,
+    height: 200
+  },
+  inputStyle: {
+    borderWidth: 1,
+    borderColor: '#e0e0e0',
+    width: 250,
+    height: 40,
+    padding: 5,
+    paddingLeft: 10,
+    marginBottom: 5
   }
-}
+})
 
-const AppNavigator = createStackNavigator({
-  Home: HomeScreen,
-  Details: DetailsScreen,
+const Intro = createStackNavigator({
+  Initial: InitialScreen,
+  SignIn: SignIn,
+  SignUp: SignUp,
 }, {
-    initialRouteName: 'Home',
-    defaultNavigationOptions: {
-      headerStyle: {
-        backgroundColor: 'orange',
-      },
-      headerTintColor: 'white',
-      headerTitleStyle: {
-        fontWeight: '100'
-      }
-    }
-}, {
-  mode: 'modal',
+  initialRouteName: 'Initial',
   headerMode: 'none'
+});
+
+const MyData = createStackNavigator({
+  Initial: Intro,
+  MyDataIndex: MyDataIndex
+}, {
+  initialRouteName: 'Initial',
 });
 
 const Guide = createStackNavigator({
@@ -190,22 +133,6 @@ const Curation = createStackNavigator({
   }
 });
 
-const MyData = createStackNavigator({
-  Main: AppNavigator,
-  MyModal: ModalScreen,
-  SignIn: SignIn,
-  SignUp: SignUp,
-}, {
-  initialRouteName: 'Main',
-  defaultNavigationOptions: {
-    headerStyle: {
-      backgroundColor: 'red'
-    }
-  }
-}
-
-);
-
 const TabNavigator = createBottomTabNavigator(
   {
     MyData,
@@ -221,4 +148,5 @@ const TabNavigator = createBottomTabNavigator(
   }
 );
 
+// export default createAppContainer(Intro)
 export default createAppContainer(TabNavigator);

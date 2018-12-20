@@ -1,0 +1,33 @@
+dependencies: \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/Libraries/Text/VirtualText/RCTVirtualTextViewManager.m \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/Libraries/Text/VirtualText/RCTVirtualTextViewManager.h \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/Libraries/Text/BaseText/RCTBaseTextViewManager.h \
+  /Users/noah/Desktop/taxnet/react_native_study/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTViewManager.h \
+  /Users/noah/Desktop/taxnet/react_native_study/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
+  /Users/noah/Desktop/taxnet/react_native_study/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
+  /Users/noah/Desktop/taxnet/react_native_study/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTConvert.h \
+  /Users/noah/Desktop/taxnet/react_native_study/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAnimationType.h \
+  /Users/noah/Desktop/taxnet/react_native_study/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBorderStyle.h \
+  /Users/noah/Desktop/taxnet/react_native_study/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTLog.h \
+  /Users/noah/Desktop/taxnet/react_native_study/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h \
+  /Users/noah/Desktop/taxnet/react_native_study/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUtils.h \
+  /Users/noah/Desktop/taxnet/react_native_study/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTPointerEvents.h \
+  /Users/noah/Desktop/taxnet/react_native_study/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTTextDecorationLineType.h \
+  /Users/noah/Desktop/taxnet/react_native_study/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/noah/Desktop/taxnet/react_native_study/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/noah/Desktop/taxnet/react_native_study/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/noah/Desktop/taxnet/react_native_study/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTEventDispatcher.h \
+  /Users/noah/Desktop/taxnet/react_native_study/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \
+  /Users/noah/Desktop/taxnet/react_native_study/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeDelegate.h \
+  /Users/noah/Desktop/taxnet/react_native_study/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTJavaScriptLoader.h \
+  /Users/noah/Desktop/taxnet/react_native_study/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h \
+  /Users/noah/Desktop/taxnet/react_native_study/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h \
+  /Users/noah/Desktop/taxnet/react_native_study/ios/build/Build/Products/Debug-iphonesimulator/include/React/UIView+React.h \
+  /Users/noah/Desktop/taxnet/react_native_study/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTComponent.h \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/Libraries/Text/VirtualText/RCTVirtualTextShadowView.h \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/Libraries/Text/BaseText/RCTBaseTextShadowView.h \
+  /Users/noah/Desktop/taxnet/react_native_study/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTShadowView.h \
+  /Users/noah/Desktop/taxnet/react_native_study/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTLayout.h \
+  /Users/noah/Desktop/taxnet/react_native_study/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTRootView.h \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/Libraries/Text/RCTTextAttributes.h \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/Libraries/Text/RCTTextTransform.h

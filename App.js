@@ -4,10 +4,19 @@ import {
   createAppContainer, 
   createStackNavigator, 
   createBottomTabNavigator,
+  createSwitchNavigator,
+  AsyncStorage,
 } from 'react-navigation'; // Version can be specified in package.json
 
-import SignUp from './src/pages/SignIn/SignUp';
-import SignIn from './src/pages/SignIn/SignIn';
+import AuthLoadingScreen from './src/pages/Auth/AuthLoadingScreen';
+
+import SignUp from './src/pages/Auth/SignUp';
+import SignIn from './src/pages/Auth/SignIn';
+import Oauth from './src/pages/Auth/Oauth';
+import SimplePassword from './src/pages/Auth/SimplePassword';
+import SimplePasswordConfirm from './src/pages/Auth/SimplePasswordConfirm';
+
+import NiceToMeetYou from './src/pages/Onboarding/NiceToMeetYou';
 
 import MyDataIndex from './src/pages/MyData/MyDataIndex';
 
@@ -20,51 +29,37 @@ import GuideSecondPage from './src/pages/Guide/GuideSecondPage';
 import CurationSecondPage from './src/pages/Curation/CurationSecondPage';
 
 class InitialScreen extends React.Component {
-  static navigationOptions = ({ navigation }) => {
-    return {
-      headerTitle: 'MyD',
-      headerRight: (
-        <Button 
-          onPress={() => alert('This is a menu list')}
-          title="?"
-          color="black"
-        />
-      ),
-    }
-  };
+  static navigationOptions = {
+    title: 'Please sign in',
+  }
 
   render() {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <View style={styles.container}>
         <View>
           <Text style={styles.title}>MyD</Text>
         </View>
-        <TextInput 
-          style={styles.inputStyle}
-          placeholder='ID'
-        />
-        <TextInput 
-          style={styles.inputStyle}
-          placeholder='Password'
-        />        
-        <Button 
-          title="로그인"
-          onPress={() => this.props.navigation.navigate('MyDataIndex')}
-        />
-        <Button 
-          title="가입하기"
-          onPress={() => this.props.navigation.navigate('SignUp')}
-        />
-        <Button
-          title="비회원으로 이용하기"
-          onPress={() => this.props.navigation.navigate('MyDataIndex')}
-        />
+        <TextInput style={styles.inputStyle} placeholder='ID' />
+        <TextInput style={styles.inputStyle} placeholder='Password' />        
+        <Button title="로그인" onPress={() => this.props.navigation.navigate('MyDataIndex')} />
+        <Button title="가입하기" onPress={() => this.props.navigation.navigate('SignUp')} />
+        <Button title="비회원으로 이용하기" onPress={() => this.props.navigation.navigate('MyDataIndex')} />
       </View>
     );
-  }  
+  }
+  
+  _signInAsync = async () => {
+    await AsyncStorage.setItem('userToken', 'abc');
+    this.props.navigation.navigate('App');
+  };
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1, 
+    alignItems: 'center', 
+    justifyContent: 'center'
+  },
   title: {
     fontWeight: 'bold',
     fontSize: 40,
@@ -91,10 +86,9 @@ const Intro = createStackNavigator({
 });
 
 const MyData = createStackNavigator({
-  Initial: Intro,
   MyDataIndex: MyDataIndex
 }, {
-  initialRouteName: 'Initial',
+  initialRouteName: 'MyDataIndex',
 });
 
 const Guide = createStackNavigator({
@@ -133,7 +127,7 @@ const Curation = createStackNavigator({
   }
 });
 
-const TabNavigator = createBottomTabNavigator(
+const AppStack = createBottomTabNavigator(
   {
     MyData,
     Guide,
@@ -146,7 +140,29 @@ const TabNavigator = createBottomTabNavigator(
       inactiveTintColor: 'gray',
     },
   }
-);
+)
 
-// export default createAppContainer(Intro)
-export default createAppContainer(TabNavigator);
+const AuthStack = createStackNavigator({
+  Initial: InitialScreen,
+  SignIn: SignIn,
+  SignUp: SignUp,
+  Oauth: Oauth,
+  SimplePassword: SimplePassword,
+  SimplePasswordConfirm: SimplePasswordConfirm,
+  NiceToMeetYou: NiceToMeetYou,
+}, {
+  initialRouteName: 'Initial',
+  headerMode: 'none'
+})
+
+export default createAppContainer(createStackNavigator(
+  {
+    AuthLoading: AuthLoadingScreen,
+    App: AppStack,
+    Auth: AuthStack,
+  },
+  {
+    initialRouteName: 'AuthLoading',
+    headerMode: 'none'
+  }
+));

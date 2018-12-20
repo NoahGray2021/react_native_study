@@ -1,0 +1,23 @@
+dependencies: \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/React/Modules/RCTDevSettings.mm \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/React/Modules/RCTDevSettings.h \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/React/Base/RCTBridge.h \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Users/noah/Desktop/taxnet/react_native_study/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JavaScriptCore.h \
+  /Users/noah/Desktop/taxnet/react_native_study/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JSCWrapper.h \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/React/Base/RCTBridge+Private.h \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/React/Base/RCTEventDispatcher.h \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/React/Modules/RCTJSCSamplingProfiler.h \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/React/Base/RCTLog.h \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/React/Profiler/RCTProfile.h \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/React/DevSupport/RCTPackagerClient.h \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/React/DevSupport/RCTPackagerConnection.h \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/React/DevSupport/RCTInspectorDevServerHelper.h \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/React/Inspector/RCTInspectorPackagerConnection.h

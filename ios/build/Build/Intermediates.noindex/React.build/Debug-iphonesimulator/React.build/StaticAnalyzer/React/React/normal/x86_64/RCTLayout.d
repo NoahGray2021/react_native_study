@@ -1,0 +1,18 @@
+dependencies: \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/React/Views/RCTLayout.m \
+  /Users/noah/Desktop/taxnet/react_native_study/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/noah/Desktop/taxnet/react_native_study/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/noah/Desktop/taxnet/react_native_study/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/React/Views/RCTShadowView+Layout.h \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/React/Views/RCTShadowView.h \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/React/Views/RCTComponent.h \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/React/Views/RCTLayout.h \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/React/Base/RCTRootView.h \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/React/Base/RCTBridge.h \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/noah/Desktop/taxnet/react_native_study/node_modules/react-native/React/Base/RCTInvalidating.h

@@ -1,0 +1,11 @@
+{
+    "appName": "tntest",
+    "roleName": "pinpointLambdaRole32437fe6",
+    "cloudWatchPolicyName": "cloudWatchPolicy32437fe6",
+    "pinpointPolicyName": "pinpointPolicy32437fe6",
+    "authPolicyName": "pinpoint_amplify_32437fe6",
+    "unauthPolicyName": "pinpoint_amplify_32437fe6",
+    "authRoleName": "reactnativestudy-20181220204629-authRole",
+    "unauthRoleName": "reactnativestudy-20181220204629-unauthRole",
+    "IAMPrefix": "230693285582"
+}

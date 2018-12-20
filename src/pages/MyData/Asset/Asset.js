@@ -83,6 +83,6 @@ const Asset = createMaterialTopTabNavigator({
         shadowOffset: {x: 0, y: 5}
       }
     },
-  })
+})
 
 export default Asset;

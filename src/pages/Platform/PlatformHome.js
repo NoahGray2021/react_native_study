@@ -3,7 +3,7 @@ import { View, TextInput, StyleSheet } from 'react-native';
 import AccounterCard from './AccounterCard';
 
 
-class PlatformIndex extends Component {
+class PlatformHome extends Component {
     static navigationOptions = {
         title: 'Platform Index',
     };
@@ -59,4 +59,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default PlatformIndex;
+export default PlatformHome;

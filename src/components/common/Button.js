@@ -27,6 +27,7 @@ const styles = {
     // flex: 1,
     // height: 48,
     // alignSelf: 'stretch',
+    minWidth: 160,
     backgroundColor: '#fff',
     borderRadius: 5,
     borderWidth: 0.4,

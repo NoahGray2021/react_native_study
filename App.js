@@ -21,12 +21,11 @@ import NiceToMeetYou from './src/pages/Onboarding/NiceToMeetYou';
 
 import MyData from './src/pages/MyData/MyData';
 
-import PlatformIndex from './src/pages/Platform/PlatformIndex';
+import PlatformHome from './src/pages/Platform/PlatformHome';
 import ExpertDetail from './src/pages/Platform/ExpertDetail';
 
-import GuideIndex from './src/pages/Guide/GuideIndex';
+import Guide from './src/pages/Guide/GuideHome';
 import CurationIndex from './src/pages/Curation/CurationIndex';
-import GuideSecondPage from './src/pages/Guide/GuideSecondPage';
 import CurationSecondPage from './src/pages/Curation/CurationSecondPage';
 
 
@@ -87,23 +86,11 @@ const styles = StyleSheet.create({
 //   headerMode: 'none'
 // });
 
-const Guide = createStackNavigator({
-  GuideIndex:  GuideIndex,
-  GuideSecond: GuideSecondPage,
-}, {
-  initialRouteName: "GuideIndex",
-  defaultNavigationOptions: {
-    headerStyle: {
-      backgroundColor: 'skyblue'
-    }
-  }
-});
-
 const Platform = createStackNavigator({
-  PlatformIndex: PlatformIndex,
+  PlatformHome: PlatformHome,
   ExpertDetail: ExpertDetail,
 }, {
-  initialRouteName: "PlatformIndex",
+  initialRouteName: "PlatformHome",
   defaultNavigationOptions: {
     headerStyle: {
       backgroundColor: 'pink'

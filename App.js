@@ -22,7 +22,7 @@ import NiceToMeetYou from './src/pages/Onboarding/NiceToMeetYou';
 import MyData from './src/pages/MyData/MyData';
 
 import PlatformIndex from './src/pages/Platform/PlatformIndex';
-import PlatformSecondPage from './src/pages/Platform/PlatformSecondPage';
+import ExpertDetail from './src/pages/Platform/ExpertDetail';
 
 import GuideIndex from './src/pages/Guide/GuideIndex';
 import CurationIndex from './src/pages/Curation/CurationIndex';
@@ -101,7 +101,7 @@ const Guide = createStackNavigator({
 
 const Platform = createStackNavigator({
   PlatformIndex: PlatformIndex,
-  PlatformSecond: PlatformSecondPage,
+  ExpertDetail: ExpertDetail,
 }, {
   initialRouteName: "PlatformIndex",
   defaultNavigationOptions: {

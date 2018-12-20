@@ -18,7 +18,7 @@ import SimplePasswordConfirm from './src/pages/Auth/SimplePasswordConfirm';
 
 import NiceToMeetYou from './src/pages/Onboarding/NiceToMeetYou';
 
-import MyDataIndex from './src/pages/MyData/MyDataIndex';
+import MyData from './src/pages/MyData/MyData';
 
 import PlatformIndex from './src/pages/Platform/PlatformIndex';
 import PlatformSecondPage from './src/pages/Platform/PlatformSecondPage';
@@ -76,20 +76,14 @@ const styles = StyleSheet.create({
   }
 })
 
-const Intro = createStackNavigator({
-  Initial: InitialScreen,
-  SignIn: SignIn,
-  SignUp: SignUp,
-}, {
-  initialRouteName: 'Initial',
-  headerMode: 'none'
-});
-
-const MyData = createStackNavigator({
-  MyDataIndex: MyDataIndex
-}, {
-  initialRouteName: 'MyDataIndex',
-});
+// const Intro = createStackNavigator({
+//   Initial: InitialScreen,
+//   SignIn: SignIn,
+//   SignUp: SignUp,
+// }, {
+//   initialRouteName: 'Initial',
+//   headerMode: 'none'
+// });
 
 const Guide = createStackNavigator({
   GuideIndex:  GuideIndex,

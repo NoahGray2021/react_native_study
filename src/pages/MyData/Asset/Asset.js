@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { createMaterialTopTabNavigator } from 'react-navigation';
 
 import Card from './Card';
@@ -11,31 +11,43 @@ import RealEstate from './RealEstate';
 import ExtraEstate from './ExtraEstate';
 import Documents from './Documents';
 
+import { Button } from '../../../components/common';
+
 class AssetScreen extends Component {
     static navigationOptions = {
         title: 'Asset Home',
     };
 
+
+    onButtonPress() {
+        this.props.navigation.navigate('DataImport')
+    }
+
     render() {
+        const { container, guideNote } = styles;
+
         return (
-            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                <Text>뫄뫄님, 계좌 및 카드를 등록하여 자산관리를 시작해보세요.</Text>
-                <TouchableOpacity 
-                    onPress={() => this.props.navigation.navigate('')}
-                    style={styles.button}
-                >
+            <View style={container}>
+                <Text>뫄뫄님, 계좌 및 카드를 등록하여</Text>
+                <Text style={{ marginBottom: 100 }}>자산관리를 시작해보세요.</Text>
+                <Button onPress={this.onButtonPress.bind(this)}>
                     <Text>마이데이터 불러오기</Text>
-                </TouchableOpacity>
-                <Text>자산관리를 위해 자산 정보를 연동해 보세요.</Text>
+                </Button>
+                <Text style={guideNote}>자산관리를 위해 자산 정보를 연동해 보세요.</Text>
             </View>
         );
     }
 };
 
 const styles = StyleSheet.create({
-    button: {
-        backgroundColor: '#e0e0e0',
-        padding: 10
+    container: {
+        flex: 1, 
+        justifyContent: 'center', 
+        alignItems: 'center'
+    },
+    guideNote: {
+        color: '#ccc',
+        marginTop: 100
     }
 })
 

@@ -5,6 +5,7 @@ import {
   createStackNavigator, 
   createBottomTabNavigator,
   createSwitchNavigator,
+  createMaterialTopTabNavigator,
   AsyncStorage,
 } from 'react-navigation'; // Version can be specified in package.json
 
@@ -27,6 +28,7 @@ import GuideIndex from './src/pages/Guide/GuideIndex';
 import CurationIndex from './src/pages/Curation/CurationIndex';
 import GuideSecondPage from './src/pages/Guide/GuideSecondPage';
 import CurationSecondPage from './src/pages/Curation/CurationSecondPage';
+
 
 class InitialScreen extends React.Component {
   static navigationOptions = {

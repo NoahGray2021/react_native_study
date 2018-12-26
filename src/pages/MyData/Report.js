@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 
-class ExtraEstate extends Component {
+class Report extends Component {
     static navigationOptions = {
-        title: 'ExtraEstate',
+        title: 'Report',
     };
 
     render() {
+        const { container } = styles
         return (
-            <View style={styles.container}>
-                <Text>My Data > Asset: ExtraEstate</Text>
+            <View style={container}>
+                <Text>Report</Text>
             </View>
-        );
+        )
     }
 };
 
@@ -23,4 +24,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default ExtraEstate;
+export default Report;

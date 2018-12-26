@@ -123,7 +123,6 @@ const Service = createStackNavigator({
   ServiceIndex
 })
 
-
 const AppStack = createBottomTabNavigator(
   {
     MyData,

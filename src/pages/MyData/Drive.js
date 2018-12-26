@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 
-class Insurance extends Component {
+class Drive extends Component {
     static navigationOptions = {
-        title: 'Insurance',
+        title: 'Drive',
     };
 
     render() {
+        const { container } = styles
         return (
-            <View style={styles.container}>
-                <Text>My Data > Asset: Insurance</Text>
+            <View style={container}>
+                <Text>Drive</Text>
             </View>
-        );
+        )
     }
 };
 
@@ -23,4 +24,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default Insurance;
+export default Drive;

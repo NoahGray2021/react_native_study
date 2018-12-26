@@ -4,6 +4,7 @@ import {
   createAppContainer, 
   createStackNavigator, 
   createBottomTabNavigator,
+  createDrawerNavigator,
   createSwitchNavigator,
   createMaterialTopTabNavigator,
   AsyncStorage,
@@ -28,6 +29,7 @@ import Guide from './src/pages/Guide/GuideHome';
 import CurationIndex from './src/pages/Curation/CurationIndex';
 import CurationSecondPage from './src/pages/Curation/CurationSecondPage';
 
+import ServiceIndex from './src/pages/Service/ServiceIndex';
 
 class InitialScreen extends React.Component {
   static navigationOptions = {
@@ -110,12 +112,25 @@ const Curation = createStackNavigator({
   }
 });
 
+// const Service = () => {
+//   console.log(this.props)
+//   return(
+//     <Button title="Service" onPress="MyData" />
+//   )
+// }
+
+const Service = createStackNavigator({
+  ServiceIndex
+})
+
+
 const AppStack = createBottomTabNavigator(
   {
     MyData,
     Guide,
     Platform,
     Curation,
+    Service,
   },
   {
     tabBarOptions: {

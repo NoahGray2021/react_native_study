@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, TextInput, StyleSheet } from 'react-native';
+import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import AccounterCard from './AccounterCard';
 
 
@@ -35,7 +35,10 @@ class CurationHome extends Component {
                 <AccounterCard 
                     onPress={this.onButtonPress.bind(this)} 
                     name="치완치완"
-                />                
+                />   
+                <TouchableOpacity style={{ position: 'absolute', width: 50, height: 50, backgroundColor: "blue", right: 20, bottom: 20, alignItems: 'center', justifyContent: 'center', borderRadius: 25 }}>
+                    <Text style={{ color: '#fff', fontSize: 40}}>?</Text>
+                </TouchableOpacity>             
             </View>
         )
     }

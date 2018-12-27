@@ -9,7 +9,12 @@ import Budget from './Budget'
 import Statistics from './Statistics'
 
 const AssetHeaderTab = createMaterialTopTabNavigator({
-    TransactionHistory,
+    TransactionHistory: {
+        screen: TransactionHistory,
+        defaultNavigationOptions: {
+            title: '소비내역'
+        }
+    },
     Calendar,
     Budget,
     Statistics,

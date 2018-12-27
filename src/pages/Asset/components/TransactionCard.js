@@ -3,7 +3,7 @@ import { View, Text, Button, StyleSheet } from 'react-native';
 
 class TransactionCard extends Component {
     static navigationOptions = {
-        title: 'TransactionCard',
+        title: '소비내역',
     };
 
     render() {

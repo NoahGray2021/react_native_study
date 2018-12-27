@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { createStackNavigator, createMaterialTopTabNavigator } from 'react-navigation';
 import { StyleSheet, View, Text } from 'react-native';
-import { Button } from '../../components/common';
 
 import MyFinance from './MyFinance';
 import Drive from './Drive';

@@ -20,14 +20,16 @@ import SimplePasswordConfirm from './src/pages/Auth/SimplePasswordConfirm';
 
 import NiceToMeetYou from './src/pages/Onboarding/NiceToMeetYou';
 
+// Main menu 1: 마이데이터 
 import MyData from './src/pages/MyData/MyData';
 
-import PlatformHome from './src/pages/Platform/PlatformHome';
-import ExpertDetail from './src/pages/Platform/ExpertDetail';
+// Main menu 2: 자산관리 / 가계부
+import Asset from './src/pages/Asset/Asset';
 
-import Guide from './src/pages/Guide/GuideHome';
-import CurationIndex from './src/pages/Curation/CurationIndex';
-import CurationSecondPage from './src/pages/Curation/CurationSecondPage';
+import ExpertDetail from './src/pages/Curation/ExpertDetail';
+
+import Solution from './src/pages/Solution/SolutionHome';
+import CurationHome from './src/pages/Curation/CurationHome';
 
 import ServiceIndex from './src/pages/Service/ServiceIndex';
 
@@ -88,26 +90,15 @@ const styles = StyleSheet.create({
 //   headerMode: 'none'
 // });
 
-const Platform = createStackNavigator({
-  PlatformHome: PlatformHome,
+
+const Curation = createStackNavigator({
+  CurationHome: CurationHome,
   ExpertDetail: ExpertDetail,
 }, {
-  initialRouteName: "PlatformHome",
+  initialRouteName: "CurationHome",
   defaultNavigationOptions: {
     headerStyle: {
       backgroundColor: 'pink'
-    }
-  }
-});
-
-const Curation = createStackNavigator({
-  CurationIndex: CurationIndex,
-  CurationSecond: CurationSecondPage,
-}, {
-  initialRouteName: 'CurationIndex',
-  defaultNavigationOptions: {
-    headerStyle: {
-      backgroundColor: 'purple'
     }
   }
 });
@@ -126,8 +117,8 @@ const Service = createStackNavigator({
 const AppStack = createBottomTabNavigator(
   {
     MyData,
-    Guide,
-    Platform,
+    Asset,
+    Solution,
     Curation,
     Service,
   },
